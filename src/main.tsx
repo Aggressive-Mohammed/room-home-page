@@ -2,11 +2,12 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 
+
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './index.css'
-import Page1 from './pages/Desktop-page1.tsx'
-import Page2 from './pages/Desktop-page2.tsx'
-import Page3 from './pages/Desktop-page3.tsx'
+import HomePage from './pages/Home.tsx'
+import Page2 from './pages/About.tsx'
+import Page3 from './pages/Shop.tsx'
 import ErrorPage from './pages/NotFound-page.tsx'
 
 const router = createBrowserRouter([
@@ -17,7 +18,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/page1",
-    element: <Page1 />
+    element: <HomePage />
   },
   {
     path: "/page2",

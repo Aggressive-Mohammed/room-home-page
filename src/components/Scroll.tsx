@@ -9,12 +9,12 @@ interface ScrollProps {
 
 const Scroll: React.FC<ScrollProps> = ({ onPrev, onNext }) => {
   return (
-    <div className='flex items-center justify-center bg-black h-17 mobile:h-12 desktop:h-20'>
-      <button aria-label="Scroll Left" onClick={onPrev} className='flex items-center justify-center mobile:p-3 desktop:p-4 hover:bg-dark-gray'>
-        <img src={angleLeft} alt="Scroll Left" className='' />
+    <div className='flex items-center justify-center bg-black h-8 w-auto'>
+      <button aria-label="Scroll Left" onClick={onPrev} className='flex items-center justify-center hover:bg-dark-gray h-8 p-2'>
+        <img src={angleLeft} alt="Scroll Left" className='px-2 h-3' />
       </button>
-      <button aria-label="Scroll Right" onClick={onNext} className='flex items-center justify-center mobile:p-3 desktop:p-6 hover:bg-dark-gray'>
-        <img src={angleRight} alt="Scroll Right" className='' />
+      <button aria-label="Scroll Right" onClick={onNext} className='flex items-center justify-center hover:bg-dark-gray h-8 p-2'>
+        <img src={angleRight} alt="Scroll Right" className='px-2 h-3' />
       </button>
     </div>
   );

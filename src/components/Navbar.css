@@ -1,21 +1,43 @@
-a{
-  position: relative;
-  padding: 10 10px;
+
+
+@media (min-width: 768px) {
+
+  a{
+    position: relative;
+    padding: 10 10px;
+  }
+  
+  a::after{
+     position: absolute;
+     justify-content: center;
+     content: '';
+     background-color: white;
+     height: 3px;
+     width: 0;
+     left: 0;
+     bottom: -8px;
+     transition: 0.5s;
+     margin-left: 40%;
+  }
+  
+  a:hover:after{
+    width: 20%;
+  }
+   
+  
+}
+@media (max-width: 640px) {
+  .nav{
+    transition: transform 0.7s, visibility 0.5s;
+    transform: translateY(-200vh);
+    visibility: hidden;
+  }
+
+  .responsive_nav {
+    transform: translateY(0);
+    visibility: visible;
+  
+  }
 }
 
-a::after{
-   position: absolute;
-   justify-content: center;
-   content: '';
-   background-color: white;
-   height: 3px;
-   width: 0;
-   left: 0;
-   bottom: -8px;
-   transition: 0.5s;
-   margin-left: 40%;
-}
 
-a:hover:after{
-  width: 20%;
-}

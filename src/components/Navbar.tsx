@@ -1,58 +1,63 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import logo from "../images/logo.svg";
 import hamburgerIcon from "../images/icon-hamburger.svg";
 import closeIcon from "../images/icon-close.svg";
 import "./Navbar.css";
 
 const Navbar: React.FC = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const navRef = useRef<HTMLDivElement | null>(null);
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+  const toggleNavbar = () => {
+    if (navRef.current) {
+      navRef.current.classList.toggle("responsive_nav");
+    }
   };
 
   return (
-    <header className="font-spartan font-black">
-      <div className="flex items-center">
-        {!menuOpen && (
-          <button
-            className="mobile:ml-6 mobile:w-12 mobile:h-8 my-10"
-            onClick={toggleMenu}
-            aria-expanded={menuOpen}
-            aria-controls="mobile-menu"
-          >
-            <img src={hamburgerIcon} alt="Open menu" />
-          </button>
-      
-        )}
-
-        {menuOpen ? (
-          <nav className="mobile:w-screen mobile:flex bg-white mobile:justify-between mobile:py-4" role="navigation">
-            <div className="mobile:mt-4 mobile:flex mobile:flex-row items-center mobile:w-screen">
-              <button
-                className="mobile:ml-4 mobile:w-12 mobile:h-8 px-2"
-                onClick={toggleMenu}
-                aria-expanded={menuOpen}
-                aria-controls="mobile-menu"
-              >
-                <img src={closeIcon} alt="Close menu" />
-              </button>
-              <a href="#home" className="px-4 py-2" aria-label="Home">Home</a>
-              <a href="#shop" className="px-4 py-2" aria-label="Shop">Shop</a>
-              <a href="#about" className="px-4 py-2" aria-label="About">About</a>
-              <a href="#contact" className="px-4 py-2" aria-label="Contact">Contact</a>
-            </div>
-          </nav>
-        ) : (
-          <img src={logo} alt="Logo" className="mobile:w-20 mobile:h-auto py-2 ml-10" />
-        )}
+    <header className="items-center absolute z-10 font-spartan w-full">
+      <div className="flex px-4 py-8">
+        <img
+          src={hamburgerIcon}
+          alt="Menu"
+          className="cursor-pointer ml-4"
+          onClick={toggleNavbar}
+        />
+        <img src={logo} alt="Logo" className="mx-16 md:mx-2" />
       </div>
+
+      <nav ref={navRef} className="nav w-full font-spartan py-4 h-screen items-center absolute top-0 z-20 text-black md:flex md:text-white font-bold">
+        <div className="flex flex-col w-full h-full">
+          <div className="bg-white absolute top-0 w-full h-20 flex flex-row items-center justify-center font-spartan">
+            <img
+              src={closeIcon}
+              alt="Close menu"
+              className="inline mr-8 ml-2 cursor-pointer text-white"
+              onClick={toggleNavbar}
+            />
+            <a href="#home" className="px-2 py-2 font-spartan" aria-label="Home">
+              home
+            </a>
+            <a href="#shop" className="px-2 py-2" aria-label="Shop">
+              shop
+            </a>
+            <a href="#about" className="px-2 py-2" aria-label="About">
+              about
+            </a>
+            <a href="#contact" className="px-2 py-2" aria-label="Contact">
+              contact
+            </a>
+          </div>
+          <div className="bg-black w-full flex flex-col items-start justify-center bg-opacity-50 h-full">
+
+          </div>
+        </div>
+      </nav>
+
+
+
+
     </header>
-
-
-
-
   );
-}
+};
 
 export default Navbar;

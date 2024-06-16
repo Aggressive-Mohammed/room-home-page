@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import dtimg1 from "../images/desktop-image-hero-1.jpg";
 import arrowIcon from '../images/icon-arrow.svg';
 import dtimg2 from "../images/desktop-image-hero-2.jpg";
@@ -6,7 +6,7 @@ import dtimg3 from "../images/desktop-image-hero-3.jpg";
 import Scroll from "./Scroll";
 
 
-const HeroSection: React.FC = () => {
+const HeroSection = () => {
   const [index, setIndex] = useState(0);
 
   const backgroundImages = [dtimg1, dtimg2, dtimg3];
@@ -36,34 +36,47 @@ const HeroSection: React.FC = () => {
   };
 
   return (
-
-    <section className="flex mobile: flex-col desktop:flex-row">
-      <div className="relative">
-        <img src={backgroundImages[index]} alt="Hero" className=" object-contain" />
-        <div className="absolute z-10 bottom-0 right-0">
-          <Scroll onPrev={prevContent} onNext={nextContent} />
+    <section className="md:grid grid-cols-2  flex flex-col min-w-80">
+      <figure className="relative md:h-80">
+        <div className="relative md:h-full">
+          <img
+            src={backgroundImages[index]}
+            alt={`Background image ${index}`}
+            className="w-full md:h-80 object-cover md:object-fill"
+          />
+          <div className="absolute bottom-0 right-0 md:hidden">
+            <Scroll onNext={nextContent} onPrev={prevContent} />
+          </div>
         </div>
-      </div>
-      <div className="flex mobile:flex-col mobile:justify-center mobile:mx-10 mobile:mt-10">
-        <div className="header-text font-spartan text-black mobile: text-4xl py-3 mobile:text-3xl desktop:text-4xl font-bold">
-          <h1 className="font-semibold mobile:xl" style={textShadows[index]}>
+      </figure>
+
+      <article className="my-8 mx-4 md:relative md:py-12">
+        <header className="font-spartan font-semibold text-3xl   text-black leading-8 pb-2 md:px-4">
+          <h1
+            className=""
+            style={textShadows[index]}
+          >
             {headers[index]}
-
           </h1>
-        </div>
-        <div className="font-spartan font-medium text-neutral mobile:text-sm mobile:mb-4">
-          <p>
+        </header>
+        <div className="md:px-4 ">
+          <p className="font-spartan font-medium text-base text-neural min-h-48  max-w-96">
             {paragraphs[index]}
           </p>
         </div>
-      </div>
-      <div className="flex items-center space-x-5 hover:opacity-35 cursor-pointer mobile:mx-10 mobile:my-6 mobile:mb-16">
-        <a href="#" className="font-spartan font-bold text-black uppercase mobile:text-xs desktop:text-base" aria-label="Shop now" style={{ letterSpacing: "15px" }}>
-          Shop now
-        </a>
-        <img src={arrowIcon} alt="Arrow Icon" className="bg-invisible ms-8" />
-      </div>
+        <div className="flex items-center my-2 md:px-4 md:mt-4 md:hover:opacity-35 cursor-pointer">
+          <a href="#" className="text-black tracking-[.7rem] font-spartan font-semibold text-sm uppercase w-auto h-4 md:font-medium" aria-label="Shop now">
+            Shop now
+          </a>
+          <img src={arrowIcon} alt="Arrow Icon" className="max-w-auto mx-2 max-h-2 md:mx-4" />
+        </div>
+        <div className="absolute bottom-0 left-0 hidden md:block ">
+          <Scroll onNext={nextContent} onPrev={prevContent} />
+        </div>
+      </article>
     </section>
+
+
   );
 };
 
