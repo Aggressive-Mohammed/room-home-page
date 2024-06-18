@@ -36,47 +36,49 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="md:grid grid-cols-2  flex flex-col min-w-80">
-      <figure className="relative md:h-80">
-        <div className="relative md:h-full">
-          <img
-            src={backgroundImages[index]}
-            alt={`Background image ${index}`}
-            className="w-full md:h-80 object-cover md:object-fill"
-          />
-          <div className="absolute bottom-0 right-0 md:hidden">
-            <Scroll onNext={nextContent} onPrev={prevContent} />
-          </div>
+    <section className="md:flex lg:flex">
+      <figure className="relative">
+        <img
+          src={backgroundImages[index]}
+          alt={`Background image ${index}`}
+          className="w-full object-cover"
+        />
+        <div className="absolute bottom-0 right-0 lg:hidden">
+          <Scroll onNext={nextContent} onPrev={prevContent} />
         </div>
       </figure>
+      <article className="my-8 mx-4  lg:flex lg:flex-col lg:relative lg:justify-center lg:mx-0 lg:my-0">
+        <div className="lg:flex lg:flex-col lg:mx-20 lg:max-w-80">
+          <header className="font-spartan font-semibold text-3xl text-black leading-8 lg:font-bold lg:text-4xl ">
+            <h1
+              className=""
+              style={textShadows[index]}
+            >
+              {headers[index]}
+            </h1>
+          </header>
+          <div
+            className="font-spartan font-medium text-sm text-neural min-h-36  max-w-96 lg:font-normal lg:text-sm lg:min-h-40 lg:max-w-80">
+            <p className="">
+              {paragraphs[index]}
+            </p>
+          </div>
+          <div className="flex items-center my-2 cursor-pointer lg:hover:opacity-35">
+            <a href="#" className="text-black tracking-[.7rem] font-spartan font-semibold text-medium uppercase lg:font-bold w-auto h-6 lg:text-lg" aria-label="Shop now">
+              Shop now
+            </a>
+            <img src={arrowIcon} alt="Arrow Icon" className="max-w-auto mx-2 max-h-4" />
+          </div>
+        </div>
 
-      <article className="my-8 mx-4 md:relative md:py-12">
-        <header className="font-spartan font-semibold text-3xl   text-black leading-8 pb-2 md:px-4">
-          <h1
-            className=""
-            style={textShadows[index]}
-          >
-            {headers[index]}
-          </h1>
-        </header>
-        <div className="md:px-4 ">
-          <p className="font-spartan font-medium text-base text-neural min-h-48  max-w-96">
-            {paragraphs[index]}
-          </p>
-        </div>
-        <div className="flex items-center my-2 md:px-4 md:mt-4 md:hover:opacity-35 cursor-pointer">
-          <a href="#" className="text-black tracking-[.7rem] font-spartan font-semibold text-sm uppercase w-auto h-4 md:font-medium" aria-label="Shop now">
-            Shop now
-          </a>
-          <img src={arrowIcon} alt="Arrow Icon" className="max-w-auto mx-2 max-h-2 md:mx-4" />
-        </div>
-        <div className="absolute bottom-0 left-0 hidden md:block ">
+        <div className="hidden lg:block lg:absolute lg:left-0 lg:bottom-0">
           <Scroll onNext={nextContent} onPrev={prevContent} />
         </div>
       </article>
+
+
+
     </section>
-
-
   );
 };
 

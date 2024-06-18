@@ -17,6 +17,14 @@ export default {
     },
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        '.bg-unset': {
+          'background': 'unset',
+        },
+      }, ['responsive', 'hover']);
+    },
+  ],
 }
 

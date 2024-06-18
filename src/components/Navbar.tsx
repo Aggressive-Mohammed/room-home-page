@@ -14,48 +14,44 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <header className="items-center absolute z-10 font-spartan w-full">
-      <div className="flex px-4 py-8">
+    <header className="items-center absolute z-10 font-spartan w-full lg:w-1/2 lg:inline lg:mt-10">
+      <div className="flex px-4 py-8 lg:hidden">
         <img
           src={hamburgerIcon}
           alt="Menu"
           className="cursor-pointer ml-4"
           onClick={toggleNavbar}
         />
-        <img src={logo} alt="Logo" className="mx-16 md:mx-2" />
+        <img src={logo} alt="Logo" className="mx-16" />
       </div>
 
-      <nav ref={navRef} className="nav w-full font-spartan py-4 h-screen items-center absolute top-0 z-20 text-black md:flex md:text-white font-bold">
+      <nav ref={navRef} className="nav w-full font-spartan py-4 h-screen items-center absolute top-0 z-20 text-black lg:text-white font-bold lg:h-20 ">
         <div className="flex flex-col w-full h-full">
-          <div className="bg-white absolute top-0 w-full h-20 flex flex-row items-center justify-center font-spartan">
+          <div className="bg-white absolute top-0 w-full h-20 flex flex-row items-center justify-center font-spartan lg:justify-start lg:bg-unset">
             <img
               src={closeIcon}
               alt="Close menu"
-              className="inline mr-8 ml-2 cursor-pointer text-white"
+              className="inline mr-8 ml-2 cursor-pointer sm text-white lg:hidden"
               onClick={toggleNavbar}
             />
-            <a href="#home" className="px-2 py-2 font-spartan" aria-label="Home">
+            <img src={logo} alt="Logo" className="mx-16 hidden lg:block" />
+            <a href="#home" className="px-2 py-2 lg:px-4" aria-label="Home">
               home
             </a>
-            <a href="#shop" className="px-2 py-2" aria-label="Shop">
+            <a href="#shop" className="px-2 py-2 lg:px-4" aria-label="Shop">
               shop
             </a>
-            <a href="#about" className="px-2 py-2" aria-label="About">
+            <a href="#about" className="px-2 py-2 lg:px-4" aria-label="About">
               about
             </a>
-            <a href="#contact" className="px-2 py-2" aria-label="Contact">
+            <a href="#contact" className="px-2 py-2 lg:px-4" aria-label="Contact">
               contact
             </a>
           </div>
-          <div className="bg-black w-full flex flex-col items-start justify-center bg-opacity-50 h-full">
-
+          <div className="bg-black w-full flex flex-col items-start justify-center bg-opacity-50 h-full lg:hidden">
           </div>
         </div>
       </nav>
-
-
-
-
     </header>
   );
 };
