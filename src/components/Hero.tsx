@@ -36,20 +36,20 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="md:flex lg:flex">
+    <section className="md:flex md:flex-col lg:flex">
       <figure className="relative">
         <img
           src={backgroundImages[index]}
           alt={`Background image ${index}`}
-          className="w-full object-cover"
+          className="w-full object-fit"
         />
-        <div className="absolute bottom-0 right-0 lg:hidden">
+        <div className="absolute bottom-0 right-0 md:block lg:hidden">
           <Scroll onNext={nextContent} onPrev={prevContent} />
         </div>
       </figure>
-      <article className="my-8 mx-4  lg:flex lg:flex-col lg:relative lg:justify-center lg:mx-0 lg:my-0">
-        <div className="lg:flex lg:flex-col lg:mx-20 lg:max-w-80">
-          <header className="font-spartan font-semibold text-3xl text-black leading-8 lg:font-bold lg:text-4xl ">
+      <article className="my-8 mx-4 md:ml-20 md:p-10 md:flex md:flex-col md:relative max-w-xl lg:flex lg:flex-col lg:relative lg:justify-center lg:mx-0 lg:my-0">
+        <div className="md:flex md:flex-col md:mx-2 md:max-w-full md:p-4 lg:flex lg:flex-col lg:mx-10 lg:max-w-80">
+          <header className="font-spartan font-semibold text-3xl text-black leading-8 md:leading-10 md:font-bold md:text-5xl lg:font-bold lg:text-4xl ">
             <h1
               className=""
               style={textShadows[index]}
@@ -58,20 +58,20 @@ const HeroSection = () => {
             </h1>
           </header>
           <div
-            className="font-spartan font-medium text-sm text-neural min-h-36  max-w-96 lg:font-normal lg:text-sm lg:min-h-40 lg:max-w-80">
+            className="font-spartan font-medium text-sm text-neural min-h-36  max-w-96 md:text-base lg:font-light lg:text-base md:max-w-lg  md:my-4 lg:min-h-40 lg:max-w-80">
             <p className="">
               {paragraphs[index]}
             </p>
           </div>
-          <div className="flex items-center my-2 cursor-pointer lg:hover:opacity-35">
-            <a href="#" className="text-black tracking-[.7rem] font-spartan font-semibold text-medium uppercase lg:font-bold w-auto h-6 lg:text-lg" aria-label="Shop now">
+          <div className="flex items-center md:items-baseline my-2 cursor-pointer lg:hover:opacity-35">
+            <a href="#" className="text-black tracking-[.7rem] font-spartan font-semibold text-medium md:font-bold md:text-lg uppercase lg:font-bold w-auto h-6 lg:text-lg" aria-label="Shop now">
               Shop now
             </a>
             <img src={arrowIcon} alt="Arrow Icon" className="max-w-auto mx-2 max-h-4" />
           </div>
         </div>
 
-        <div className="hidden lg:block lg:absolute lg:left-0 lg:bottom-0">
+        <div className="hidden md:hidden lg:block lg:absolute lg:left-0 lg:bottom-0">
           <Scroll onNext={nextContent} onPrev={prevContent} />
         </div>
       </article>
