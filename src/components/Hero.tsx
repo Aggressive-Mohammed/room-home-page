@@ -5,7 +5,6 @@ import dtimg2 from "../images/desktop-image-hero-2.jpg";
 import dtimg3 from "../images/desktop-image-hero-3.jpg";
 import Scroll from "./Scroll";
 
-
 const HeroSection = () => {
   const [index, setIndex] = useState(0);
 
@@ -25,6 +24,7 @@ const HeroSection = () => {
 
   const textShadows = [
     { textShadow: '1px 3px 6px #A0A0A0' },
+    
   ];
 
   const nextContent = () => {
@@ -36,48 +36,39 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="md:flex md:flex-col lg:flex">
+    <section className="flex flex-col lg:flex-row relative">
       <figure className="relative">
         <img
           src={backgroundImages[index]}
           alt={`Background image ${index}`}
-          className="w-full object-fit"
+          className="w-full object-fill"
         />
-        <div className="absolute bottom-0 right-0 md:block lg:hidden">
+        <div className="absolute bottom-0 right-0 lg:hidden">
           <Scroll onNext={nextContent} onPrev={prevContent} />
         </div>
       </figure>
-      <article className="my-8 mx-4 md:ml-20 md:p-10 md:flex md:flex-col md:relative max-w-xl lg:flex lg:flex-col lg:relative lg:justify-center lg:mx-0 lg:my-0">
-        <div className="md:flex md:flex-col md:mx-2 md:max-w-full md:p-4 lg:flex lg:flex-col lg:mx-10 lg:max-w-80">
-          <header className="font-spartan font-semibold text-3xl text-black leading-8 md:leading-10 md:font-bold md:text-5xl lg:font-bold lg:text-4xl ">
-            <h1
-              className=""
-              style={textShadows[index]}
-            >
-              {headers[index]}
-            </h1>
-          </header>
-          <div
-            className="font-spartan font-medium text-sm text-neural min-h-36  max-w-96 md:text-base lg:font-light lg:text-base md:max-w-lg  md:my-4 lg:min-h-40 lg:max-w-80">
-            <p className="">
-              {paragraphs[index]}
-            </p>
-          </div>
-          <div className="flex items-center md:items-baseline my-2 cursor-pointer lg:hover:opacity-35">
-            <a href="#" className="text-black tracking-[.7rem] font-spartan font-semibold text-medium md:font-bold md:text-lg uppercase lg:font-bold w-auto h-6 lg:text-lg" aria-label="Shop now">
-              Shop now
-            </a>
-            <img src={arrowIcon} alt="Arrow Icon" className="max-w-auto mx-2 max-h-4" />
-          </div>
-        </div>
 
-        <div className="hidden md:hidden lg:block lg:absolute lg:left-0 lg:bottom-0">
+      <div className="px-4 py-8 relative">
+        <header className="font-semibold mb-4 text-3xl text-black leading-6">
+          <h1 style={textShadows[index]}>
+            {headers[index]}
+          </h1>
+        </header>
+        <div className="font-medium text-sm text-neural h-[110px] w-full">
+          <p>
+            {paragraphs[index]}
+          </p>
+        </div>
+        <div className="flex items-center mt-10 cursor-pointer lg:hover:opacity-35">
+          <a href="#" className="text-black tracking-[.5rem] font-medium text-sm uppercase" aria-label="Shop now">
+            Shop now
+          </a>
+          <img src={arrowIcon} alt="Arrow Icon" className="h-2 mx-2" />
+        </div>
+        <div className="hidden lg:block lg:absolute 2xl:left-0 2xl:bottom-0">
           <Scroll onNext={nextContent} onPrev={prevContent} />
         </div>
-      </article>
-
-
-
+      </div>
     </section>
   );
 };

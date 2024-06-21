@@ -9,7 +9,7 @@ interface ScrollProps {
 
 const Scroll: React.FC<ScrollProps> = ({ onPrev, onNext }) => {
   return (
-    <div className='flex items-center justify-center bg-black h-8 w-14 md:h-12 md:w-28 lg:h-16 lg:w-30'>
+    <div className='flex items-center justify-center bg-black h-8 w-14 md:h-12 md:w-28 lg:h-16 lg:w-32'>
       <button 
         onClick={onPrev} 
         className='hover:bg-dark-gray p-3 flex items-center justify-center md:h-6 md:p-6 lg:p-6'
