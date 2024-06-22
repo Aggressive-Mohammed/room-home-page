@@ -1,12 +1,12 @@
 import React from 'react';
-import './App.css';
-import About from './components/About';
+
 import Navbar from './components/Navbar';
 import HeroSection from './components/Hero';
 import "./components/Navbar.css"
+import About from './pages/About';
 
 
-const App: React.FC = () => {
+const Home: React.FC = () => {
   return (
     <>
     <Navbar />
@@ -16,4 +16,4 @@ const App: React.FC = () => {
   );
 }
 
-export default App;
+export default Home;

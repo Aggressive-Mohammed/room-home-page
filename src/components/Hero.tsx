@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import dtimg1 from "../images/desktop-image-hero-1.jpg";
 import arrowIcon from '../images/icon-arrow.svg';
 import dtimg2 from "../images/desktop-image-hero-2.jpg";
@@ -63,9 +64,9 @@ const HeroSection = () => {
         </div>
         {/* Shop Now link */}
         <div className="flex items-center mt-10 cursor-pointer desktop:hover:opacity-35 desktop:mt-6">
-          <a href="#" className="text-black tracking-[.5rem] font-medium text-sm uppercase desktop:text-lg desktop:font-semibold" aria-label="Shop now">
+          <Link to={'/shop'} className="text-black tracking-[.5rem] font-medium text-sm uppercase desktop:text-lg desktop:font-semibold" aria-label="Shop now">
             Shop now
-          </a>
+          </Link>
           <img src={arrowIcon} alt="Arrow Icon" className="h-2 mx-2 desktop:h-4" />
         </div>
         {/* Scroll buttons for desktop view */}

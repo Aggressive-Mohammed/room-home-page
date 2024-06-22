@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "../images/logo.svg";
 import hamburgerIcon from "../images/icon-hamburger.svg";
 import closeIcon from "../images/icon-close.svg";
@@ -21,8 +22,8 @@ const Navbar: React.FC = () => {
           alt="Menu"
           className="cursor-pointer ml-2"
           onClick={toggleNavbar}
-          aria-expanded={isNavOpen} 
-          aria-controls="nav-menu"  
+          aria-expanded={isNavOpen}
+          aria-controls="nav-menu"
         />
         <img src={logo} alt="Logo" className="ml-16" />
       </div>
@@ -44,10 +45,10 @@ const Navbar: React.FC = () => {
             />
             <img src={logo} alt="Logo" className="mx-16 hidden desktop:block" />
             {/* Navigation links */}
-            <a href="#home" className="px-2 py-2 desktop:px-4" aria-label="Home">home</a>
-            <a href="#shop" className="px-2 py-2 desktop:px-4" aria-label="Shop">shop</a>
-            <a href="#about" className="px-2 py-2 desktop:px-4" aria-label="About">about</a>
-            <a href="#contact" className="px-2 py-2 desktop:px-4" aria-label="Contact">contact</a>
+            <Link to={'/'} className="px-2 py-2 desktop:px-4" aria-label="Home">home</Link>
+            <Link to={'/shop'} className="px-2 py-2 desktop:px-4" aria-label="Shop">shop</Link>
+            <Link to={'/about'} className="px-2 py-2 desktop:px-4" aria-label="About">about</Link>
+            <Link to={'/contact'} className="px-2 py-2 desktop:px-4" aria-label="Contact">contact</Link>
           </div>
           {/* Background overlay for mobile view */}
           <div className="bg-black w-full flex flex-col items-start justify-center bg-opacity-50 h-full lg:hidden">
