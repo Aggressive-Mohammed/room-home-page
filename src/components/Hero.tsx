@@ -51,13 +51,13 @@ const HeroSection = () => {
       {/* Content section */}
       <div className="px-4 py-8 relative desktop:basis-7/12 desktop:pt-32 desktop:px-20 desktop:max-w-xl">
         {/* Header containing the dynamic title */}
-        <header className="font-semibold mb-4 text-3xl text-black leading-6 desktop:text-5xl" id="hero-section">
+        <header className="font-semibold mb-4 text-3xl md:text-5xl text-black leading-6 desktop:text-5xl" id="hero-section">
           <h1>
             {headers[index]}
           </h1>
         </header>
         {/* Paragraph containing the dynamic description */}
-        <div className="font-medium text-sm text-neural h-24 w-full desktop:text-base">
+        <div className="font-medium text-sm text-neural h-24 w-full md:text-base desktop:text-base">
           <p>
             {paragraphs[index]}
           </p>
