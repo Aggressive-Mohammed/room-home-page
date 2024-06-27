@@ -13,6 +13,7 @@ const HeroSection = () => {
 
   // Arrays containing dynamic content for each section
   const backgroundImages = [dtimg1, dtimg2, dtimg3];
+
   const headers = [
     "Discover innovative ways to decorate",
     "We are available all across the world",
@@ -50,25 +51,26 @@ const HeroSection = () => {
       </figure>
 
       {/* Content Section */}
-      <div className="px-4 py-8 relative desktop:basis-7/12 desktop:pt-32 desktop:px-20 desktop:max-w-xl">
+      <div className="px-5 py-8 relative  desktop:basis-7/12 desktop:pt-32 md:py-16 md:mx-10 desktop:px-20 desktop:max-w-xl">
         {/* Header containing the dynamic title */}
-        <header className="font-semibold mb-4 text-3xl md:text-5xl text-black leading-6 desktop:text-5xl" id="hero-section">
+        <header className="font-semibold mb-4 text-3xl md:text-7xl md:font-bold text-black  leading-6 desktop:text-5xl" id="hero-section">
           <h1>
             {headers[index]}
           </h1>
         </header>
         {/* Paragraph containing the dynamic description */}
-        <div className="font-medium text-sm text-neural h-24 w-full md:text-base desktop:text-base">
+        <div className="font-medium text-sm text-neural h-24 w-full md:text-2xl  desktop:text-base">
           <p>
             {paragraphs[index]}
           </p>
         </div>
         {/* Shop Now Link */}
-        <div className="flex items-center mt-10 cursor-pointer desktop:hover:opacity-35 desktop:mt-6">
-          <Link to={'/shop'} className="text-black tracking-[.5rem] font-medium text-sm uppercase desktop:text-lg desktop:font-semibold" aria-label="Shop now">
+        <div className="flex items-center mt-16 cursor-pointer desktop:hover:opacity-35 md:mt-24 desktop:mt-6">
+          <Link to={'/shop'} className="text-black tracking-[.5rem] font-medium text-sm uppercase md:text-xl md:tracking-[.8rem] md:font-bold
+          desktop:text-lg desktop:font-semibold" aria-label="Shop now">
             Shop now
           </Link>
-          <img src={arrowIcon} alt="Arrow Icon" className="h-2 mx-2 desktop:h-4" />
+          <img src={arrowIcon} alt="Arrow Icon" className="h-2 mx-2 md:h-6 desktop:h-4" />
         </div>
         {/* Scroll buttons for desktop view */}
         <div className="hidden desktop:block desktop:absolute desktop:left-0 desktop:bottom-0">
@@ -88,13 +90,13 @@ const HeroSection = () => {
           />
         </figure>
         {/* Article containing the text content */}
-        <article className="px-4 py-8 desktop:basis-2/5 desktop:px-8 desktop:py-14" role="article">
+        <article className="px-4 py-8 desktop:basis-2/5 md:mx-8 md:py-16  desktop:px-8 desktop:py-14" role="article">
           {/* Header for the article */}
-          <header className="font-bold text-sm desktop:text-base text-black tracking-[7px] uppercase">
+          <header className="font-bold text-sm md:text-xl desktop:text-base md:font-bold text-black tracking-[5px] uppercase">
             <h2 id="about-section">About our furniture</h2>
           </header>
           {/* Paragraph describing the furniture collection */}
-          <p className="font-medium text-sm text-neural h-40 w-full mt-4 desktop:text-base desktop:font-medium">
+          <p className="font-medium text-sm text-neural h-40 w-full mt-4 md:text-lg desktop:text-base desktop:font-medium">
             Our multifunctional collection blends design and function to suit your individual taste. Make each room unique, or pick a cohesive theme that best expresses your interests and what inspires you. Find the furniture pieces you need, from traditional to contemporary styles or anything in between. Product specialists are available to help you create your dream space.
           </p>
         </article>

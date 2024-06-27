@@ -34,26 +34,26 @@ const Scroll: React.FC<ScrollProps> = ({ onPrev, onNext }) => {
     <div
       ref={scrollContainerRef}
       tabIndex={0} // Makes the div focusable for keyboard events
-      className='flex items-center justify-center bg-black h-8 w-14 desktop:h-16 desktop:w-40 desktop:justify-around'
+      className='flex items-center justify-center bg-black h-8 w-14 md:h-16 md:w-28 desktop:h-16 desktop:w-40 desktop:justify-around'
       aria-label="Scroll Navigation" 
     >
       {/* Button to scroll left */}
       <button
         onClick={onPrev}
-        className='hover:bg-dark-gray p-3 flex items-center justify-center desktop:py-4 desktop:px-8'
+        className='hover:bg-dark-gray p-3 flex items-center justify-center md:py-5 md:px-6 desktop:py-4 desktop:px-8'
         aria-label="Scroll Left" 
         role="button"
       >
-        <img src={angleLeft} alt="Scroll Left" className='h-2 desktop:h-8' />
+        <img src={angleLeft} alt="Scroll Left" className='h-2 md:h-6 desktop:h-8' />
       </button>
       {/* Button to scroll right */}
       <button
         onClick={onNext}
-        className='hover:bg-dark-gray p-3 flex items-center justify-center desktop:py-4 desktop:px-8'
+        className='hover:bg-dark-gray p-3 flex items-center md:py-5 md:px-6 justify-center desktop:py-4 desktop:px-8'
         aria-label="Scroll Right"
         role="button"
       >
-        <img src={angleRight} alt="Scroll Right" className='h-2 desktop:h-8' />
+        <img src={angleRight} alt="Scroll Right" className='h-2 md:h-6 desktop:h-8' />
       </button>
     </div>
   );
