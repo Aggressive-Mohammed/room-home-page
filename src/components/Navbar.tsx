@@ -8,12 +8,13 @@ import "./Navbar.css";
 const Navbar: React.FC = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
+  // Function to toggle the navigation menu
   const toggleNavbar = () => {
     setIsNavOpen(!isNavOpen);
   };
 
   return (
-    <header className="absolute z-10 w-full lg:w-1/3 desktop:w-362 lg:mt-4 desktop:mt-12">
+    <header className="items-center absolute z-10 w-full desktop:w-1/3 desktop:inline-block desktop:mt-8">
       {/* Top bar for mobile view with hamburger menu and logo */}
       <div className="flex justify-start px-4 py-8 md:mt-8 md:ml-8 desktop:hidden">
         <img
@@ -29,8 +30,8 @@ const Navbar: React.FC = () => {
       {/* Navigation menu */}
       <nav
         id="nav-menu"
-        className={`absolute top-0 z-20 w-full bg-white desktop:bg-transparent  desktop:bg-unset text-black desktop:text-white font-semibold text-base ${isNavOpen ? "block" : "hidden"} desktop:block`}
-        aria-hidden={!isNavOpen}
+        className={`nav w-full py-4 h-screen desktop:h-8 items-center absolute top-0 z-20 text-black desktop:text-white font-semibold text-base ${isNavOpen ? "responsive_nav" : ""}`}
+        aria-hidden={!isNavOpen} // Accessibility: Hides the menu from screen readers when not visible
       >
         <div className="flex flex-col w-full h-full">
           {/* Menu items container */}
@@ -56,9 +57,6 @@ const Navbar: React.FC = () => {
           {/* Background overlay for mobile view */}
           <div className="bg-black w-full flex flex-col items-start justify-center bg-opacity-50 h-full lg:hidden">
           </div>
-          {isNavOpen && (
-            <div className="bg-black bg-opacity-50 h-screen w-full desktop:hidden"></div>
-          )}
         </div>
       </nav>
     </header>
