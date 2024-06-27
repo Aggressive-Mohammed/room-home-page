@@ -1,15 +1,17 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import aboutdark from '../images/image-about-dark.jpg';
+import aboutlight from '../images/image-about-light.jpg';
 import dtimg1 from "../images/desktop-image-hero-1.jpg";
-import arrowIcon from '../images/icon-arrow.svg';
 import dtimg2 from "../images/desktop-image-hero-2.jpg";
 import dtimg3 from "../images/desktop-image-hero-3.jpg";
+import arrowIcon from '../images/icon-arrow.svg';
 import Scroll from "./Scroll";
 
 const HeroSection = () => {
   const [index, setIndex] = useState(0);
 
-  // Arrays containing the background images, headers, and paragraphs for each section
+  // Arrays containing dynamic content for each section
   const backgroundImages = [dtimg1, dtimg2, dtimg3];
   const headers = [
     "Discover innovative ways to decorate",
@@ -21,21 +23,20 @@ const HeroSection = () => {
     "With stores all over the world, it's easy for you to find furniture for your home or place of business. Locally, we're in most major cities throughout the country. Find the branch nearest you using our store locator. Any questions? Don't hesitate to contact us today.",
     "Our modern furniture store provides a high level of quality. Our company has invested in advanced technology to ensure that every product is made as perfect and as consistent as possible. With three decades of experience in this industry, we understand what customers want for their home and office."
   ];
-  
-  // Function to go to the next content
+
+  // Function to handle moving to the next content
   const nextContent = () => {
     setIndex((prevIndex) => (prevIndex + 1) % headers.length);
   };
 
-  // Function to go to the previous content
+  // Function to handle moving to the previous content
   const prevContent = () => {
     setIndex((prevIndex) => (prevIndex - 1 + headers.length) % headers.length);
   };
 
   return (
-    // Main section container with flex layout for desktop screens
     <section className="flex flex-col relative desktop:flex-row" aria-labelledby="hero-section">
-      {/* Figure containing the background image */}
+      {/* Hero Image Section */}
       <figure className="relative">
         <img
           src={backgroundImages[index]}
@@ -48,7 +49,7 @@ const HeroSection = () => {
         </div>
       </figure>
 
-      {/* Content section */}
+      {/* Content Section */}
       <div className="px-4 py-8 relative desktop:basis-7/12 desktop:pt-32 desktop:px-20 desktop:max-w-xl">
         {/* Header containing the dynamic title */}
         <header className="font-semibold mb-4 text-3xl md:text-5xl text-black leading-6 desktop:text-5xl" id="hero-section">
@@ -62,7 +63,7 @@ const HeroSection = () => {
             {paragraphs[index]}
           </p>
         </div>
-        {/* Shop Now link */}
+        {/* Shop Now Link */}
         <div className="flex items-center mt-10 cursor-pointer desktop:hover:opacity-35 desktop:mt-6">
           <Link to={'/shop'} className="text-black tracking-[.5rem] font-medium text-sm uppercase desktop:text-lg desktop:font-semibold" aria-label="Shop now">
             Shop now
@@ -74,6 +75,39 @@ const HeroSection = () => {
           <Scroll onNext={nextContent} onPrev={prevContent} />
         </div>
       </div>
+
+      {/* About Section */}
+      <section className="desktop:flex" aria-labelledby="about-section">
+        {/* Dark-themed image */}
+        <figure>
+          <img 
+            src={aboutdark} 
+            alt="A dark-themed furniture setup" 
+            className="w-full object-cover lg:h-full"
+            aria-hidden="true"  // since this image is decorative and not critical content
+          />
+        </figure>
+        {/* Article containing the text content */}
+        <article className="px-4 py-8 desktop:basis-2/5 desktop:px-8 desktop:py-14" role="article">
+          {/* Header for the article */}
+          <header className="font-bold text-sm desktop:text-base text-black tracking-[7px] uppercase">
+            <h2 id="about-section">About our furniture</h2>
+          </header>
+          {/* Paragraph describing the furniture collection */}
+          <p className="font-medium text-sm text-neural h-40 w-full mt-4 desktop:text-base desktop:font-medium">
+            Our multifunctional collection blends design and function to suit your individual taste. Make each room unique, or pick a cohesive theme that best expresses your interests and what inspires you. Find the furniture pieces you need, from traditional to contemporary styles or anything in between. Product specialists are available to help you create your dream space.
+          </p>
+        </article>
+        {/* Light-themed image */}
+        <figure className="desktop:col-span-2">
+          <img 
+            src={aboutlight} 
+            alt="A light-themed furniture setup" 
+            className="w-full object-cover desktop:h-full"
+            aria-hidden="true"  // since this image is decorative and not critical content
+          />
+        </figure>
+      </section>
     </section>
   );
 };
