@@ -21,6 +21,7 @@ module.exports = {
       'very-dark-gray': 'hsl(0, 0%, 27%)',
       'neural': '#A0A0A0',
     },
+    
     extend: {
       width: {
         '160': '160px',
@@ -61,6 +62,7 @@ module.exports = {
         '800': '800px',
         '1538': '1538px',
       },
+      ...defaultTheme,
     },
   },
   plugins: [
