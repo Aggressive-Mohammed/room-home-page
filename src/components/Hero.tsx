@@ -40,47 +40,47 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="lg:grid lg:grid-rows-2">
+    <section className="desktop:grid lg:grid-rows-2 desktop:max-h-fit">
       {/* First row of the section with image and content */}
       <div className="lg:grid lg:grid-cols-12">
-        <figure className="relative desktop:col-span-7">
+        <figure className="relative lg:col-span-7 desktop:col-span-7">
           <img
             src={backgroundImages[index]}
             alt={`Hero background ${index + 1}`}
-            className="w-full"
+            className="w-full lg:h-full"
           />
-          <div className="absolute bottom-0 right-0 lg:block desktop:hidden">
+          <div className="absolute bottom-0 right-0 lg:hidden desktop:hidden">
             {/* Scroll component for navigation */}
             <Scroll onNext={nextContent} onPrev={prevContent} />
           </div>
         </figure>
 
-        <div className="lg:col-span-5 flex flex-col items-center lg:relative md:px-6 md:my-6">
-          <header className="max-w-80 text-xs px-4 py-6 md:max-w-2xl lg:max-w-sm lg:my-16 lg:mx-16">
+        <div className="lg:col-span-5 flex flex-col items-center lg:items-center lg:relative md:px-6 md:my-6 lg:my-0 desktop:max-w-2xl desktop:px-6 desktop:mt-8">
+          <header className="max-w-80 text-xs px-4 py-6 md:max-w-2xl lg:max-w-md lg:my-6 lg:px-8 desktop:max-w-2xl">
             <h1
-              className="font-semibold py-4 leading-7 text-3xl md:text-6xl md:font-semibold lg:text-4xl lg:font-bold lg:leading-8 lg:py-3"
+              className="font-semibold py-4 leading-7 text-3xl md:text-6xl md:font-semibold lg:text-4xl desktop:text-5xl lg:font-bold lg:leading-8 lg:py-3"
               style={textShadows[index]}
             >
               {/* Dynamic header content */}
               {headers[index]}
             </h1>
-            <p className="text-neural h-24 md:text-2xl">
+            <p className="text-neural h-24 md:text-2xl lg:text-sm lg:h-10 desktop:text-lg">
               {/* Dynamic paragraph content */}
               {paragraphs[index]}
             </p>
-            <div className="flex items-center py-6 cursor-pointer desktop:hover:opacity-35 md:mt-24 desktop:mt-8">
+            <div className="flex items-center py-6 cursor-pointer desktop:hover:opacity-35 md:mt-24 desktop:mt-20">
               {/* Shop now link for navigation */}
               <Link
                 to={'/shop'}
-                className="text-black tracking-[.5rem] font-medium text-sm uppercase md:text-3xl md:tracking-[1.5rem] md:font-bold desktop:text-xl desktop:font-bold"
+                className="text-black tracking-[.5rem] font-medium text-sm uppercase md:text-3xl lg:text-lg md:tracking-[1.5rem] md:font-bold lg:tracking-[.4rem] desktop:text-xl desktop:font-bold"
                 aria-label="Shop now"
               >
                 Shop now
               </Link>
-              <img src={arrowIcon} alt="Arrow Icon" className="h-2 mx-2 md:h-6 desktop:h-4" />
+              <img src={arrowIcon} alt="Arrow Icon" className="h-2 mx-2 md:h-6 lg:h-3 desktop:h-4" />
             </div>
           </header>
-          <div className="hidden absolute bottom-0 left-0 desktop:hidden">
+          <div className="hidden absolute bottom-0 left-0 lg:block desktop:block">
             {/* Scroll component for navigation */}
             <Scroll onNext={nextContent} onPrev={prevContent} />
           </div>
@@ -88,19 +88,20 @@ const HeroSection = () => {
       </div>
 
       {/* Second row of the section with additional images and content */}
-      <div className="flex flex-col md:flex md:flex-col lg:flex lg:flex-row">
-        <figure className="">
+      <div className="flex flex-col md:flex md:flex-col lg:flex lg:flex-row lg:max-h-64 lg:max-w-full desktop:flex desktop:flex-row desktop:max-h-80">
+        <figure className="lg:max-w-full desktop:max-w-md">
           {/* Dark-themed image */}
           <img
             src={aboutdark}
             alt="A dark-themed furniture setup"
-            className="md:w-full"
+            className="md:w-full w-max lg:h-full lg:max-w-xl desktop:h-full"
             aria-hidden="true"
           />
         </figure>
-        <div className="md:items-center md:justify-center md:my-16">
-          <article className="max-w-80 md:max-w-none text-xs px-4 py-6 md:flex md:flex-col md:h-80 md:px-16 desktop:basis-7/12">
-            <header className="font-bold text-black uppercase text-sm md:text-3xl tracking-[2px] md:tracking-[4px]">
+
+        <div className="md:items-center md:justify-center md:my-16 lg:max-w-md desktop:basis-2/4 desktop:max-w-xl">
+          <article className="max-w-80 md:max-w-none text-xs px-4 py-6 lg:py-0 md:flex md:flex-col md:h-80 md:px-16 lg:max-w-lg desktop:my-0 desktop:h-28 lg:px-6 desktop:px-4">
+            <header className="font-bold text-black uppercase text-sm md:text-3xl tracking-[2px] lg:text-base md:tracking-[4px] desktop:text-2xl">
               <h2 id="about-section">About our furniture</h2>
             </header>
             <p className="font-medium text-xs text-neural h-40 w-full mt-4 md:text-2xl md:font-sm lg:text-sm desktop:font-medium desktop:text-lg">
@@ -109,12 +110,13 @@ const HeroSection = () => {
             </p>
           </article>
         </div>
-        <figure className="">
+
+        <figure className="lg:max-w-lg desktop:max-w-md">
           {/* Light-themed image */}
           <img
             src={aboutlight}
             alt="A light-themed furniture setup"
-            className="md:w-full"
+            className="md:w-full lg:w-max lg:h-full desktop:h-full"
             aria-hidden="true"
           />
         </figure>
