@@ -55,20 +55,20 @@ const HeroSection = () => {
           </div>
         </figure>
 
-        <div className="lg:col-span-5 flex flex-col items-center lg:items-center lg:relative md:px-6 md:my-6 lg:my-0 desktop:max-w-2xl desktop:px-12 desktop:mt-8 xl:max-w-xl">
-          <header className="max-w-sm px-6 py-6 md:max-w-2xl lg:max-w-md xl:max-w-md lg:my-6 lg:px-4 desktop:max-w-2xl">
+        <div className="lg:col-span-5 flex flex-col items-center lg:items-center lg:relative md:px-6 md:my-6 lg:mt-5 lg:my-0 xl:mt-10 desktop:max-w-2xl desktop:px-12 desktop:mt-8 xl:max-w-xl">
+          <header className="max-w-sm px-6 py-6 md:max-w-2xl lg:max-w-md xl:max-w-md lg:my-6 lg:px-6 desktop:max-w-2xl">
             <h1
-              className="font-semibold py-4 mr-5 leading-7 text-3xl md:text-6xl md:font-semibold lg:text-3xl desktop:text-5xl lg:font-bold lg:leading-8 lg:py-3"
+              className="font-semibold py-4 mr-5 leading-7 text-3xl md:text-6xl md:font-semibold lg:text-4xl desktop:text-5xl lg:font-bold lg:leading-8 lg:py-3"
               style={textShadows[index]}
             >
               {/* Dynamic header content */}
               {headers[index]}
             </h1>
-            <p className="text-dark-gray text-base h-auto md:text-3xl lg:text-sm lg:h-30 desktop:text-lg">
+            <p className="text-dark-gray text-base h-40 md:h-60 md:text-3xl lg:text-sm lg:h-[105px] desktop:text-lg xl:text-base">
               {/* Dynamic paragraph content */}
               {paragraphs[index]}
             </p>
-           <div className="flex items-center cursor-pointer my-8 md:mt-8 lg:mt-0 desktop:mt-4 group">
+           <div className="flex items-center cursor-pointer mt-6 mb-4 md:mt-4 lg:mb-6 lg:mt-1 desktop:my-12 xl:mt-8 group">
               {/* Shop now link for navigation */}
               <Link
                 to="/shop"
@@ -101,11 +101,11 @@ const HeroSection = () => {
         </figure> 
 
         <div className="flex-col my-8 items-center px-6 md:items-center  md:justify-center md:my-8 lg:justify-end lg:max-w-full desktop:basis-2/4 desktop:max-w-full xl:max-w-lg">
-          <article className="max-w-none md:max-w-none text-xs py-6 lg:py-0 md:flex md:flex-col md:h-80 lg:h-auto md:px-16 lg:max-w-xl desktop:my-4 desktop:h-auto lg:px-2 desktop:px-8">
-            <header className="font-bold text-black uppercase text-sm md:text-3xl tracking-[4px] lg:text-base md:tracking-[4px] desktop:text-xl">
+          <article className="max-w-none md:max-w-none text-xs py-6 lg:py-0 md:flex md:flex-col md:h-80 xl:mt-8 lg:h-auto md:px-16 lg:max-w-xl desktop:my-4 desktop:h-auto lg:px-2 desktop:px-8">
+            <header className="font-bold text-black uppercase text-sm md:text-3xl tracking-[4px] lg:text-base md:tracking-[4px] desktop:text-xl xl:tracking-[4px] xl:text-lg">
               <h2 id="about-section ">About our furniture</h2>
             </header>
-            <p className="font-base text-base text-dark-gray h-auto w-full mt-2 md:text-2xl md:font-sm lg:text-sm desktop:font-medium desktop:text-lg">
+            <p className="font-base text-base text-dark-gray h-auto w-full mt-2 md:text-2xl md:font-sm lg:text-sm desktop:font-medium desktop:text-lg xl:text-base">
               {/* About section content */}
               Our multifunctional collection blends design and function to suit your individual taste. Make each room unique, or pick a cohesive theme that best expresses your interests and what inspires you. Find the furniture pieces you need, from traditional to contemporary styles or anything in between. Product specialists are available to help you create your dream space.
             </p>

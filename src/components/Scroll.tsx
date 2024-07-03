@@ -34,17 +34,17 @@ const Scroll: React.FC<ScrollProps> = ({ onPrev, onNext }) => {
     >
       <button
         onClick={onPrev}
-        className='hover:bg-dark-gray p-3 flex items-center justify-center md:py-5 md:px-6 lg:px-5 lg:pl-9 lg:py-4 xl:pl-9 xl:py-5 desktop:py-5 desktop:px-9 bg-black'
+        className='hover:bg-dark-gray h-8 p-3 flex items-center justify-center md:py-7 md:px-6 md:h-13 lg:px-5 lg:pl-9 lg:py-6 xl:pl-9 xl:py-7 desktop:py-5 desktop:px-9 bg-black'
         aria-label="Scroll Left"
       >
-        <img src={angleLeft} alt="Scroll Left" className='h-2 md:h-4 lg:h-4 desktop:h-6' />
+        <img src={angleLeft} alt="Scroll Left" className='xl:h-4' />
       </button>
       <button
         onClick={onNext}
-        className='hover:bg-dark-gray p-3 flex items-center justify-center md:py-5 md:px-6 lg:px-5 lg:pr-9 lg:py-4  xl:py-5 xl:pl-9  desktop:py-5 desktop:px-9 bg-black'
+        className='hover:bg-dark-gray h-8 p-3 flex items-center justify-center md:py-7 md:px-6 lg:px-5 lg:pr-9 lg:py-6 md:h-13 xl:py-7 xl:pl-9  desktop:py-5 desktop:px-9 bg-black'
         aria-label="Scroll Right"
       >
-        <img src={angleRight} alt="Scroll Right" className='h-2 md:h-4 lg:h-4 desktop:h-6' />
+        <img src={angleRight} alt="Scroll Right" className='xl:h-4' />
       </button>
     </div>
   );
