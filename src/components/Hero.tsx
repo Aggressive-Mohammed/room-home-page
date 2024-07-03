@@ -47,7 +47,7 @@ const HeroSection = () => {
           <img
             src={backgroundImages[index]}
             alt={`Hero background ${index + 1}`}
-            className="w-full lg:h-full"
+            className="w-full lg:h-full desktop:w-full"
           />
           <div className="absolute bottom-0 right-0 lg:hidden desktop:hidden">
             {/* Scroll component for navigation */}
@@ -55,8 +55,8 @@ const HeroSection = () => {
           </div>
         </figure>
 
-        <div className="lg:col-span-5 flex flex-col items-center lg:items-center lg:relative md:px-6 md:my-6 lg:my-0 desktop:max-w-2xl desktop:px-6 desktop:mt-8">
-          <header className="max-w-80 text-xs px-4 py-6 md:max-w-2xl lg:max-w-md lg:my-6 lg:px-8 desktop:max-w-2xl">
+        <div className="lg:col-span-5 flex flex-col items-center lg:items-center lg:relative md:px-6 md:my-6 lg:my-0 desktop:max-w-2xl desktop:px-12 desktop:mt-8 xl:max-w-xl">
+          <header className="max-w-80 text-xs px-4 py-6 md:max-w-2xl lg:max-w-md xl:max-w-md lg:my-6 lg:px-6 desktop:max-w-2xl">
             <h1
               className="font-semibold py-4 leading-7 text-3xl md:text-6xl md:font-semibold lg:text-4xl desktop:text-5xl lg:font-bold lg:leading-8 lg:py-3"
               style={textShadows[index]}
@@ -64,20 +64,21 @@ const HeroSection = () => {
               {/* Dynamic header content */}
               {headers[index]}
             </h1>
-            <p className="text-neural h-24 md:text-2xl lg:text-sm lg:h-10 desktop:text-lg">
+            <p className="text-dark-gray h-24 md:text-2xl lg:text-sm lg:h-10 desktop:text-lg">
               {/* Dynamic paragraph content */}
               {paragraphs[index]}
             </p>
-            <div className="flex items-center py-6 cursor-pointer desktop:hover:opacity-35 md:mt-24 desktop:mt-20">
+           <div className="flex items-center py-6 cursor-pointer md:mt-24 lg:mt-12 desktop:mt-24 group">
               {/* Shop now link for navigation */}
               <Link
-                to={'/shop'}
-                className="text-black tracking-[.5rem] font-medium text-sm uppercase md:text-3xl lg:text-lg md:tracking-[1.5rem] md:font-bold lg:tracking-[.4rem] desktop:text-xl desktop:font-bold"
+                to="/shop"
+                className="text-black tracking-[.5rem] font-medium text-sm uppercase md:text-3xl lg:text-lg md:tracking-[1.5rem] md:font-semibold 
+                desktop:font-medium lg:tracking-[.4rem] desktop:text-xl group-hover:opacity-75"
                 aria-label="Shop now"
               >
                 Shop now
               </Link>
-              <img src={arrowIcon} alt="Arrow Icon" className="h-2 mx-2 md:h-6 lg:h-3 desktop:h-4" />
+              <img src={arrowIcon} alt="Arrow Icon" className="h-2 mx-2 md:h-6 lg:h-3 desktop:h-4 group-hover:opacity-75" />
             </div>
           </header>
           <div className="hidden absolute bottom-0 left-0 lg:block desktop:block">
@@ -89,29 +90,29 @@ const HeroSection = () => {
 
       {/* Second row of the section with additional images and content */}
       <div className="flex flex-col md:flex md:flex-col lg:flex lg:flex-row lg:max-h-64 lg:max-w-full desktop:flex desktop:flex-row desktop:max-h-80">
-        <figure className="lg:max-w-full desktop:max-w-md">
+        <figure className="lg:max-w-full desktop:max-w-full">
           {/* Dark-themed image */}
           <img
             src={aboutdark}
             alt="A dark-themed furniture setup"
-            className="md:w-full w-max lg:h-full lg:max-w-xl desktop:h-full"
+            className="md:w-full lg:w-max lg:h-full desktop:h-full"
             aria-hidden="true"
           />
-        </figure>
+        </figure> 
 
-        <div className="md:items-center md:justify-center md:my-16 lg:max-w-md desktop:basis-2/4 desktop:max-w-xl">
-          <article className="max-w-80 md:max-w-none text-xs px-4 py-6 lg:py-0 md:flex md:flex-col md:h-80 md:px-16 lg:max-w-lg desktop:my-0 desktop:h-28 lg:px-6 desktop:px-4">
-            <header className="font-bold text-black uppercase text-sm md:text-3xl tracking-[2px] lg:text-base md:tracking-[4px] desktop:text-2xl">
+        <div className="flex-col items-center md:items-center  md:justify-center md:my-16 lg:justify-end lg:max-w-full desktop:basis-2/4 desktop:max-w-full xl:max-w-lg">
+          <article className="max-w-none md:max-w-none text-xs px-4 py-6 lg:py-0 md:flex md:flex-col md:h-80 lg:h-28 md:px-16 lg:max-w-xl desktop:my-0 desktop:h-28 lg:px-6 desktop:px-10">
+            <header className="font-bold text-black uppercase text-sm md:text-3xl tracking-[2px] lg:text-base md:tracking-[4px] desktop:text-xl">
               <h2 id="about-section">About our furniture</h2>
             </header>
-            <p className="font-medium text-xs text-neural h-40 w-full mt-4 md:text-2xl md:font-sm lg:text-sm desktop:font-medium desktop:text-lg">
+            <p className="font-medium text-xs text-dark-gray h-28 w-full mt-4 md:text-2xl md:font-sm lg:text-sm desktop:font-medium desktop:text-lg">
               {/* About section content */}
               Our multifunctional collection blends design and function to suit your individual taste. Make each room unique, or pick a cohesive theme that best expresses your interests and what inspires you. Find the furniture pieces you need, from traditional to contemporary styles or anything in between. Product specialists are available to help you create your dream space.
             </p>
           </article>
         </div>
 
-        <figure className="lg:max-w-lg desktop:max-w-md">
+        <figure className="lg:max-w-full desktop:max-w-full">
           {/* Light-themed image */}
           <img
             src={aboutlight}

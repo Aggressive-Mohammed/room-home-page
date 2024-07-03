@@ -7,7 +7,7 @@ import "./components/Navbar.css"
 
 const Home: React.FC = () => {
   return (
-    <div className='overflow-x-hidden'>
+    <div className='text-12'>
     <Navbar />
     <HeroSection/>
     </div>
