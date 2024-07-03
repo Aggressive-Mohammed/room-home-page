@@ -36,7 +36,7 @@ Users should be able to:
 
 - Solution URL: [GitHub Repository](https://github.com/Aggressive-Mohammed/room-home-page)
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [site URL](https://lambent-bublanina-9c5e1c.netlify.app/)
 
 ## My process
 
@@ -89,22 +89,8 @@ Users should be able to:
 ```
 
 ```jsx
-// Importing the necessary modules from React and ReactDOM libraries
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-
 // Importing required components and modules from react-router-dom for routing
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-
-// Importing the main stylesheet
-import './index.css';
-
-// Importing the page components for different routes
-import ErrorPage from './pages/NotFound-page.tsx'; // 404 Error page component
-import ShopPage from './pages/Shop.tsx'; // Shop page component
-import Contact from './pages/Contact.tsx'; // Contact page component
-import Home from './Home.tsx'; // Home page component
-import About from './pages/About.tsx'; // About page component
 
 // Creating the router configuration with routes and corresponding components
 const router = createBrowserRouter([
