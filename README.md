@@ -36,7 +36,7 @@ Users should be able to:
 
 - Solution URL: [GitHub Repository](https://github.com/Aggressive-Mohammed/room-home-page)
 
-- Live Site URL: [site URL](https://lambent-bublanina-9c5e1c.netlify.app/)
+- Live Site URL: [site URL](https://amalitech-home-page.netlify.app/)
 
 ## My process
 
