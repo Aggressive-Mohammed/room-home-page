@@ -28,6 +28,10 @@ Users should be able to:
 ![mobile view](./src/assets/mobile_view.png)
 
 ![mobilenav-active view ](./src/assets/mobile_view_nav-active.png)
+
+![desktop view ](./src/assets/desktop_view.png)
+
+
 ### Links
 
 - Solution URL: [GitHub Repository](https://github.com/Aggressive-Mohammed/room-home-page)
